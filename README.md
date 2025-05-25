@@ -49,8 +49,8 @@ This project is designed to help understand HID attacks, payload delivery mechan
 ### 1. `setup.sh` (Bash Script)
 * Automates Apache2 web server setup on Debian-based Linux.
 * Updates packages, installs Apache2, and starts the service.
-* Creates `/var/www/html/tools` for hosting files. [cite: 3]
-* Moves `payload.exe` (or your chosen name) and `Starter.ps1` to the tools directory. [cite: 3]
+* Creates `/var/www/html/tools` for hosting files. 
+* Moves `payload.exe` (or your chosen name) and `Starter.ps1` to the tools directory. 
 
 ### 2. `Evil_Spark.ino` (Digispark C++ Sketch)
 * Arduino C++ code for ATtiny85 based Digispark-compatible devices. 
@@ -68,6 +68,7 @@ This project is designed to help understand HID attacks, payload delivery mechan
 * **THIS IS THE CORE PAYLOAD YOU MUST CREATE OR PROVIDE.**
 * This project *does not* include a pre-made `payload.exe`.
 * Functionality is user-defined (e.g., reverse shell, information gathering, etc.).
+* ❗**ACTION REQUIRED: You MUST build your own `ring.exe` (or chosen payload) and place it in the Server Setup folder. The project relies on *your* custom payload for this critical step.**
 * **Payload Inspiration & Reference:** For creating a custom payload, particularly one in Go (which compiles to an `.exe`), you can study projects like **RingShell**. RingShell is a Go-based C2 framework and can serve as an excellent reference for understanding how such payloads are structured and deployed.
     * RingShell GitHub Repository: [https://github.com/MustafaAbdulazizHamza/RingShell/tree/main](https://github.com/MustafaAbdulazizHamza/RingShell/tree/main)
 
@@ -84,8 +85,8 @@ This project is designed to help understand HID attacks, payload delivery mechan
 ### 1.  SERVER: Apache Setup (`setup.sh`)
 1.  Place `setup.sh`, your `payload.exe` (e.g., `ring.exe`), and `Starter.ps1` in the same directory on your Linux server.
 2.  Edit `setup.sh`:
-    * Set `PAYLOAD="your_payload_name.exe"` (e.g., `PAYLOAD="ring.exe"`). [cite: 3]
-    * Ensure `SHELL_SCRIPT="Starter.ps1"`. [cite: 3]
+    * Set `PAYLOAD="your_payload_name.exe"` (e.g., `PAYLOAD="ring.exe"`). 
+    * Ensure `SHELL_SCRIPT="Starter.ps1"`. 
 3.  Make `setup.sh` executable: `chmod +x setup.sh`.
 4.  Run with sudo: `sudo ./setup.sh`.
 5.  Note your server's IP address (the script attempts to display it).
@@ -112,7 +113,7 @@ This project is designed to help understand HID attacks, payload delivery mechan
 
 ## ❗ Important Considerations & Limitations
 * **UAC (User Account Control):** The `.ino` sketch attempts to handle UAC.  Its success varies based on target system settings.
-* **Antivirus (AV) & EDR:** Basic attempts to disable Windows Defender [cite: 4, 5] are included. Modern AV/EDR solutions will likely detect and block these activities. This PoC is not designed for stealth.
+* **Antivirus (AV) & EDR:** Basic attempts to disable Windows Defender  are included. Modern AV/EDR solutions will likely detect and block these activities. This PoC is not designed for stealth.
 * **Keyboard Layouts:** Keystroke emulation typically assumes a US QWERTY layout. Results may vary on different layouts.
 * **Timings & Delays:** `DigiKeyboard.delay()` values in the `.ino` sketch are critical.  Adjust them based on target system responsiveness.
 * **Network Connectivity:** The target PC needs HTTP (port 80) access to your server.
