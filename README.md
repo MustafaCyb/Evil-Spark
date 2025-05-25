@@ -2,6 +2,8 @@
 ![Evil Spark](https://github.com/MustafaCyb/Evil-Spark/blob/main/EvilSpark.png)
 ---
 
+> **🔴 CRITICAL COMPATIBILITY NOTE:** The Digispark's automated keystrokes, particularly those designed for disabling security features via User Interface (UI) manipulation within the `Evil_Spark.ino` C++ sketch, are **specifically tailored for the Windows 11 interface.** This sequence may **NOT** function as expected on other Windows versions (e.g., Windows 10, Windows 8/7) or even different Windows 11 builds/localizations without significant modifications to the sketch's code. Users will likely need to adjust timings, the number of TAB key presses, arrow key navigation, and overall UI interaction logic.
+
 **⚠️ DANGER: EXTREME WARNING ⚠️**
 This project is developed for **educational and research purposes ONLY**. Unauthorized use of this tool on any system or network without explicit, prior, mutual, and written consent is **ILLEGAL** and **STRICTLY PROHIBITED**. The creators and contributors of Evil Spark assume **NO LIABILITY** and are **NOT RESPONSIBLE** for any misuse, damage, or legal consequences arising from the use or handling of this software. **USE AT YOUR OWN EXTREMIA PERIL AND RESPONSIBILITY.**
 
