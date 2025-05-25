@@ -1,4 +1,6 @@
 # Evil Spark 
+![Evil](https://github.com/MustafaCyb/Evil-Spark/blob/main/EvilSpark.png)
+---
 
 **⚠️ DANGER: EXTREME WARNING ⚠️**
 This project is developed for **educational and research purposes ONLY**. Unauthorized use of this tool on any system or network without explicit, prior, mutual, and written consent is **ILLEGAL** and **STRICTLY PROHIBITED**. The creators and contributors of Evil Spark assume **NO LIABILITY** and are **NOT RESPONSIBLE** for any misuse, damage, or legal consequences arising from the use or handling of this software. **USE AT YOUR OWN EXTREMIA PERIL AND RESPONSIBILITY.**
